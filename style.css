@@ -17,3 +17,7 @@ h1 {
     text-align: center;
     text-decoration: underline 2px;
 }
+
+ul a {
+    color: black;
+}
