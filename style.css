@@ -2,22 +2,36 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif
 }
 
-ul {
-    list-style-type: none;
+nav {
     display: flex;
     justify-content: space-around;
-    font-size: 2rem;
+    font-size: 1.75rem;
+    background-color: dodgerblue;
+    padding: .75rem;
+    
 }
 
 .selected {
 border: solid 3px black;
 }
 
+#detail > div {
+    height: 100vh;
+}
+
 h1 {
     text-align: center;
     text-decoration: underline 2px;
+    background-color: gold;
+    padding: .75rem;
 }
 
-ul a {
-    color: black;
+nav a {
+    color: gold;
+}
+
+@media (max-width: 500px){
+   nav {
+       flex-direction: column;
+}
 }

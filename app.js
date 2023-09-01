@@ -1,4 +1,6 @@
-const ul = document.querySelector('ul')
+const nav = document.querySelector('nav')
+const detail = document.querySelector('#detail')
+console.log(detail)
 
 let puppies;
 
@@ -7,15 +9,37 @@ const fetchPuppies = async() => {
   const json = await response.json();
   puppies = json.data.players;
   render();
+  //console.log(puppies)
 };
+
 
 const render = ()=> {
     const hash = window.location.hash.slice(1)*1;
     const html = puppies.map( puppy =>{
-      return `<li><a href='#${puppy.id}' class='${ puppy.id === hash ? 'selected': ''}'>${puppy.name}</a></li>`
+      return `<a href='#${puppy.id !== hash ? puppy.id : '' }' class='${ puppy.id === hash ? 'selected': ''}'>${puppy.name}</a>`
     }).join('');
-    ul.innerHTML = html;
+    nav.innerHTML = html;
+
+    const breeds = puppies.find( breed => {
+        return breed.id === hash;
+    });
+    
+    
+    let detailHtml = 'Welcome to the 2023 Puppy Bowl site!'
+    if(breeds){
+      console.log(breeds.imageUrl)
+      detailHtml = `<div><img src=${breeds.imageUrl}></div>`;
+  }
+
+    console.log(detailHtml)
+    
+    detail.innerHTML = detailHtml;
+
+    
+    
+    
 };
+
 
 window.addEventListener('hashchange', ()=>{
     render();
