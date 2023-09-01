@@ -17,6 +17,7 @@ border: solid 3px black;
 
 #detail > div {
     height: 100vh;
+    background-size: cover;
 }
 
 h1 {

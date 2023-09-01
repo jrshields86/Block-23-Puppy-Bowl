@@ -27,8 +27,9 @@ const render = ()=> {
     
     let detailHtml = 'Welcome to the 2023 Puppy Bowl site!'
     if(breeds){
-      console.log(breeds.imageUrl)
-      detailHtml = `<div><img src=${breeds.imageUrl}></div>`;
+      detailHtml = `<div><img src=${breeds.imageUrl}>
+      ${breeds.breed}
+      </div>`;
   }
 
     console.log(detailHtml)
