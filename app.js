@@ -1,6 +1,5 @@
 const nav = document.querySelector('nav')
 const detail = document.querySelector('#detail')
-console.log(detail)
 
 let puppies;
 
@@ -9,9 +8,7 @@ const fetchPuppies = async() => {
   const json = await response.json();
   puppies = json.data.players;
   render();
-  //console.log(puppies)
 };
-
 
 const render = ()=> {
     const hash = window.location.hash.slice(1)*1;
@@ -31,16 +28,10 @@ const render = ()=> {
       ${breeds.breed}
       </div>`;
   }
-
-    console.log(detailHtml)
     
     detail.innerHTML = detailHtml;
-
-    
-    
-    
+ 
 };
-
 
 window.addEventListener('hashchange', ()=>{
     render();
